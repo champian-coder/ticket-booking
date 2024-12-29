@@ -1,0 +1,26 @@
+[
+    {
+        "pnr": "7105094283",
+        "userId": "4",
+        "trainNumber": "12864",
+        "trainName": "Kolkata Duronto",
+        "travelClass": "SL",
+        "passenger": {
+            "name": "vikash",
+            "age": 25
+        },
+        "status": "Confirmed"
+    },
+    {
+        "pnr": "7816260399",
+        "userId": "5",
+        "trainNumber": "12617",
+        "trainName": "Double Decker",
+        "travelClass": "3A",
+        "passenger": {
+            "name": "vikah",
+            "age": 65
+        },
+        "status": "Confirmed"
+    }
+]
