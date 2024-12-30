@@ -5,7 +5,7 @@
         "trainNumber": "12864",
         "trainName": "Kolkata Duronto",
         "travelClass": "SL",
-        "passenger": {
+        "passengers": {
             "name": "vikash",
             "age": 25
         },
@@ -17,10 +17,48 @@
         "trainNumber": "12617",
         "trainName": "Double Decker",
         "travelClass": "3A",
-        "passenger": {
+        "passengers": {
             "name": "vikah",
             "age": 65
         },
         "status": "Confirmed"
+    },
+    {
+        "pnr": "2002308035",
+        "userId": "4",
+        "trainNumber": "12864",
+        "trainName": "Kolkata Duronto",
+        "travelClass": "SL",
+        "passengers": [
+            {
+                "name": "vikash",
+                "age": 54
+            },
+            {
+                "name": "vikash",
+                "age": 65
+            }
+        ],
+        "totalCharge": 940,
+        "status": "Confirmed"
+    },
+    {
+        "pnr": "3652619473",
+        "userId": "4",
+        "trainNumber": "12864",
+        "trainName": "Kolkata Duronto",
+        "travelClass": "SL",
+        "passengers": [
+            {
+                "name": "ds",
+                "age": 5
+            },
+            {
+                "name": "gfgdhgs",
+                "age": 655
+            }
+        ],
+        "totalCharge": 1132.8,
+        "status": "Cancelled"
     }
 ]
