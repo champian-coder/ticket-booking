@@ -286,7 +286,7 @@
     "destination": "Mumbai",
     "seats": {
       "SL": {
-        "available": 0,
+        "available": 249,
         "Rate": 470
       },
       "3A": {

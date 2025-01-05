@@ -18,8 +18,33 @@ export class BookingHandler {
         const dest = readlineSync.question("Enter destination station: ");
 
         // Get trains between stations
-        this.trainHandler.handleGetTrainsBetweenStations(src, dest);
+        const train=this.trainHandler.handleGetTrainsBetweenStations(src, dest);
+        console.log("Trains between", src, "and", src, ":");
+        
+        if (train != null && train.length > 0) {
+          // If the train array exists and is not empty, loop through each train
+          train.forEach((trainObj) => {
+            console.log(`Train No: ${trainObj.trainId}`);
+            console.log(`Train Name: ${trainObj.name}`);
+            console.log(`Seats:`);
 
+            // Iterate through the seats object and log availability and price
+            for (let seatType in trainObj.seats) {
+              const seat =
+                trainObj.seats[seatType as keyof typeof trainObj.seats];
+                if (seat !== undefined) {
+                    console.log(`  ${seatType}: Available: ${seat.available}, Price: ₹${seat.Rate}`);
+                  } else {
+                    console.log(`  ${seatType}: No data available`);
+                  }
+            }
+            console.log("----------------------------------"); // To separate trains in the log
+          });
+        }else{
+            console.log("No trains between", src, "and", src);
+            //const dest = readlineSync.question("");
+            return;
+        }
         const trainNumber = readlineSync.question("Enter the train number to book: ");
         const selectedTrain = this.trainHandler.handleGetTrainByTrainno(trainNumber);
 
@@ -68,7 +93,7 @@ export class BookingHandler {
             if (addMore.toLowerCase() !== "yes") break;
         }
         let ticketStatus="Confirmed";
-        if(selectedSeat.available>passengers.length){
+        if(selectedSeat.available<passengers.length){
             ticketStatus="WaitListed";
         }
         // Calculate total charge
@@ -85,7 +110,6 @@ export class BookingHandler {
             totalCharge,
             status: ticketStatus,
         };
-        //let seatType="SL";
         // Reduce seat availability
         this.trainHandler.handleUpdateSeatAvailability(selectedTrain.trainId,seatType, passengers.length);
 
@@ -120,13 +144,8 @@ export class BookingHandler {
             const cancelChoice = readlineSync.question("Do you want to cancel a ticket? (yes/no): ");
             if (cancelChoice.toLowerCase() === "yes") {
                 const pnrToCancel = readlineSync.question("Enter PNR to cancel: ");
-                const success = this.bookingService.cancelTicket(pnrToCancel);
+                this.bookingService.cancelTicket(pnrToCancel);
 
-                if (success) {
-                    console.log("Ticket cancelled successfully.");
-                } else {
-                    console.log("Ticket cancellation failed.");
-                }
             }
         }
     }

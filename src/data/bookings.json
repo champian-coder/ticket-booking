@@ -15,5 +15,22 @@
         "NoofPassanger": 1,
         "totalCharge": 578.1999999999999,
         "status": "Cancelled"
+    },
+    {
+        "pnr": "4529338225",
+        "userId": "4",
+        "trainNumber": "12864",
+        "trainName": "Kolkata Duronto",
+        "travelClass": "SL",
+        "passengers": [
+            {
+                "name": "dsf",
+                "age": 52,
+                "status": "CNF"
+            }
+        ],
+        "NoofPassanger": 1,
+        "totalCharge": 578.1999999999999,
+        "status": "Cancelled"
     }
 ]

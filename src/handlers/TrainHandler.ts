@@ -8,9 +8,7 @@ export class TrainHandler {
   }
 
   handleGetTrainsBetweenStations(start: string, end: string) {
-    const trains = this.trainService.getTrainsBetweenStations(start, end);
-    console.log("Trains between", start, "and", end, ":");
-    console.log(trains);
+    return this.trainService.getTrainsBetweenStations(start, end);  
   }
 
   handleUpdateSeatAvailability(trainno: string, seatType: "SL" | "3A" | "2A" | "1A", booked: number) {
