@@ -32,5 +32,27 @@
         "NoofPassanger": 1,
         "totalCharge": 578.1999999999999,
         "status": "Cancelled"
+    },
+    {
+        "pnr": "4406563154",
+        "userId": "4",
+        "trainNumber": "12009",
+        "trainName": "Panchavati Express",
+        "travelClass": "1A",
+        "passengers": [
+            {
+                "name": "hdjf",
+                "age": 5,
+                "status": "CNF"
+            },
+            {
+                "name": "hgfds",
+                "age": 53,
+                "status": "CNF"
+            }
+        ],
+        "NoofPassanger": 2,
+        "totalCharge": 6867.599999999999,
+        "status": "Cancelled"
     }
 ]

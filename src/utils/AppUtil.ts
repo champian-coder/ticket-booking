@@ -23,7 +23,7 @@ export class FileUtil {
     }
 }
 export function printHeader() {
-    console.log("Welcome to the Ticket Booking System");
+    console.log("\n--------------Welcome to the Ticket Booking System------------------");
 }
 
 

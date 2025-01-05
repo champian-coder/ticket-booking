@@ -19,7 +19,7 @@ export class AuthService {
 
     private writeUsers(users: User[]): void {
         try {
-            FileUtil.writeFile(this.usersFile, users);
+            FileUtil.writeFile(this.usersFile, JSON.stringify(users, null, 2));
         } catch (error) {
             console.error("Failed to write users:", error);
         }

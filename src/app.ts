@@ -4,7 +4,7 @@ import { TrainHandler } from "./handlers/TrainHandler";
 import { TrainService } from "./services/TrainService";
 import { BookingService } from "./services/BookingService";
 import { BookingHandler } from "./handlers/BookingHandler";
-import {getErrorMessage} from './utils/AppUtil';
+import {getErrorMessage,printHeader} from './utils/AppUtil';
 // Initialize the handlers and services
 const authHandler = new AuthHandler();
 const trainService = new TrainService();
@@ -13,7 +13,7 @@ const bookingService = new BookingService();
 const bookingHandler = new BookingHandler(bookingService, trainHandler);
 
 let loggedInUser: any = null;
-
+printHeader();
 // Function to display the main menu
 function mainMenu(): string {
     console.log("\nMain Menu:");

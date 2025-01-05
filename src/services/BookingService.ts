@@ -1,6 +1,7 @@
 import { FileUtil } from "../utils/AppUtil";
 import * as path from "path";
 import * as dotenv from 'dotenv';
+import { TrainService } from "./TrainService";
 dotenv.config();
 const ticketsFile = path.join(__dirname, "../data/bookings.json");
 
@@ -41,11 +42,6 @@ export class BookingService {
         return totalWithGST;
     }
 
-    // Function to reduce seat availability
-    reduceSeatAvailability(selectedSeat: { available: number }, numberOfPassengers: number): void {
-        selectedSeat.available -= numberOfPassengers;
-    }
-
     // Function to fetch booking history for a specific user
     getBookingHistory(userId: string): any[] {
         try {
@@ -64,15 +60,30 @@ export class BookingService {
                 const ticketIndex = tickets.findIndex((ticket: any) => ticket.pnr === pnr);
     
                 if (ticketIndex !== -1) {
-                    const ticket = tickets[ticketIndex];
-                    ticket.status = "Cancelled";
-    
+                  const ticket = tickets[ticketIndex];
+                  
+                  if (ticket.status != "Cancelled") {
                     // Save the updated tickets back to the file
-                    tickets[ticketIndex] = ticket;  // Update the ticket status in the array
-                    FileUtil.writeFile(ticketsFile, JSON.stringify(tickets, null, 4));
-    
+                    ticket.status = "Cancelled";
+                    tickets[ticketIndex] = ticket; // Update the ticket status in the array
+                    FileUtil.writeFile(
+                      ticketsFile,
+                      JSON.stringify(tickets, null, 4)
+                    );
+                    const trainService = new TrainService();
+                    trainService.updateSeatAvailability(
+                      ticket.trainNumber,
+                      ticket.travelClass,
+                      ticket.passengers.length * -1
+                    );
                     console.log("Ticket cancelled successfully.");
                     return true;
+                  }
+                  else{
+                    console.log("Ticket is already cancelled can't be done again.");
+                    return false;
+                  }
+                
                 }
         } catch (error) {
             console.error("Error cancelling ticket:", error);

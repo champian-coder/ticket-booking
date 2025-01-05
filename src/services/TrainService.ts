@@ -17,7 +17,11 @@ export class TrainService {
   }
 
   getTrainsBetweenStations(start: string, end: string): Train[] {
-    return this.trains.filter(train => train.source === start && train.destination === end);
+    const train = this.trains.filter(train => 
+      train.source.toLowerCase() === start.toLowerCase() && 
+      train.destination.toLowerCase() === end.toLowerCase()
+    );
+    return train;
   }
 
   updateSeatAvailability(trainno: string, seatType: "SL" | "3A" | "2A" | "1A", booked: number): string {
@@ -36,7 +40,6 @@ export class TrainService {
   private saveTrainData(): void {
     // Ensure that the trains array is correctly formatted and not empty
     if (this.trains && this.trains.length > 0) {
-      console.log("this is working:",this.trains.length)
       FileUtil.writeFile(this.filePath, JSON.stringify(this.trains, null, 2));
     } else {
       console.error("No train data to write to the file.");
@@ -44,7 +47,8 @@ export class TrainService {
   }
 
   getTrainByTrainno(trainno: string): Train | undefined {
-    return this.trains.find(train => train.trainId === trainno);
+    const train=this.trains.find(train => train.trainId === trainno);
+    return train;
   }
 
   displayTrains(): void {

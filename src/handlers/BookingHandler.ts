@@ -20,7 +20,7 @@ export class BookingHandler {
         // Get trains between stations
         const train=this.trainHandler.handleGetTrainsBetweenStations(src, dest);
         console.log("Trains between", src, "and", src, ":");
-        
+        console.log("----------------------------------"); // To separate trains in the log
         if (train != null && train.length > 0) {
           // If the train array exists and is not empty, loop through each train
           train.forEach((trainObj) => {
@@ -77,7 +77,7 @@ export class BookingHandler {
         }
 
         console.log(`Selected class: ${seatType}`);
-        console.log("Seat availability:", selectedSeat.available);
+        console.log("Seat available:", selectedSeat.available);
         console.log("Seat Price:", selectedSeat.Rate);
         const passengers: Array<{ name: string; age: number; status: string }> = [];
         while (true) {
