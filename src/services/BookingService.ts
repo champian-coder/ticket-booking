@@ -37,7 +37,7 @@ export class BookingService {
         const totalWithServiceCharge = total + serviceCharge;
     
         // Add GST on the total with service charge
-        const totalWithGST = totalWithServiceCharge * (1 + gst / 100);
+        const totalWithGST = parseFloat((totalWithServiceCharge * (1 + gst / 100)).toFixed(2));
     
         return totalWithGST;
     }
@@ -54,7 +54,7 @@ export class BookingService {
     }
 
     // Function to cancel a ticket by PNR
-    cancelTicket(pnr: string): boolean {
+    cancelTicket(pnr: string,trainService:TrainService): boolean {
         try {
                 let tickets =FileUtil.readFile(ticketsFile,);
                 const ticketIndex = tickets.findIndex((ticket: any) => ticket.pnr === pnr);
@@ -70,7 +70,6 @@ export class BookingService {
                       ticketsFile,
                       JSON.stringify(tickets, null, 4)
                     );
-                    const trainService = new TrainService();
                     trainService.updateSeatAvailability(
                       ticket.trainNumber,
                       ticket.travelClass,

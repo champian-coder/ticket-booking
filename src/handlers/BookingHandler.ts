@@ -144,7 +144,7 @@ export class BookingHandler {
             const cancelChoice = readlineSync.question("Do you want to cancel a ticket? (yes/no): ");
             if (cancelChoice.toLowerCase() === "yes") {
                 const pnrToCancel = readlineSync.question("Enter PNR to cancel: ");
-                this.bookingService.cancelTicket(pnrToCancel);
+                this.bookingService.cancelTicket(pnrToCancel,this.trainHandler.getTrainService());
 
             }
         }

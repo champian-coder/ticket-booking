@@ -6,7 +6,9 @@ export class TrainHandler {
   constructor(trainService: TrainService) {
     this.trainService = trainService;
   }
-
+  getTrainService(){
+    return this.trainService;
+  }
   handleGetTrainsBetweenStations(start: string, end: string) {
     return this.trainService.getTrainsBetweenStations(start, end);  
   }
