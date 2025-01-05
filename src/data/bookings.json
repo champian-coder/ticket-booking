@@ -1,64 +1,19 @@
 [
     {
-        "pnr": "7105094283",
-        "userId": "4",
-        "trainNumber": "12864",
-        "trainName": "Kolkata Duronto",
-        "travelClass": "SL",
-        "passengers": {
-            "name": "vikash",
-            "age": 25
-        },
-        "status": "Confirmed"
-    },
-    {
-        "pnr": "7816260399",
-        "userId": "5",
-        "trainNumber": "12617",
-        "trainName": "Double Decker",
-        "travelClass": "3A",
-        "passengers": {
-            "name": "vikah",
-            "age": 65
-        },
-        "status": "Confirmed"
-    },
-    {
-        "pnr": "2002308035",
+        "pnr": "7300429678",
         "userId": "4",
         "trainNumber": "12864",
         "trainName": "Kolkata Duronto",
         "travelClass": "SL",
         "passengers": [
             {
-                "name": "vikash",
-                "age": 54
-            },
-            {
-                "name": "vikash",
-                "age": 65
+                "name": "sdfg",
+                "age": 5,
+                "status": "CNF"
             }
         ],
-        "totalCharge": 940,
-        "status": "Confirmed"
-    },
-    {
-        "pnr": "3652619473",
-        "userId": "4",
-        "trainNumber": "12864",
-        "trainName": "Kolkata Duronto",
-        "travelClass": "SL",
-        "passengers": [
-            {
-                "name": "ds",
-                "age": 5
-            },
-            {
-                "name": "gfgdhgs",
-                "age": 655
-            }
-        ],
-        "totalCharge": 1132.8,
+        "NoofPassanger": 1,
+        "totalCharge": 578.1999999999999,
         "status": "Cancelled"
     }
 ]

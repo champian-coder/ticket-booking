@@ -1,302 +1,302 @@
 [
-    {
-        "trainId": "12201",
-        "name": "Kolkata-Mumbai Express",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 200,
-                "Rate": 500
-            },
-            "3A": {
-                "available": 50,
-                "Rate": 1500
-            },
-            "1A": {
-                "available": 10,
-                "Rate": 2500
-            }
-        }
-    },
-    {
-        "trainId": "12315",
-        "name": "Mumbai Superfast",
-        "source": "Mumbai",
-        "destination": "Kolkata",
-        "seats": {
-            "SL": {
-                "available": 180,
-                "Rate": 550
-            },
-            "3A": {
-                "available": 40,
-                "Rate": 1400
-            },
-            "1A": {
-                "available": 15,
-                "Rate": 2300
-            }
-        }
-    },
-    {
-        "trainId": "12432",
-        "name": "Howrah Mail",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 300,
-                "Rate": 450
-            },
-            "3A": {
-                "available": 60,
-                "Rate": 1200
-            },
-            "1A": {
-                "available": 5,
-                "Rate": 2800
-            }
-        }
-    },
-    {
-        "trainId": "12110",
-        "name": "Deccan Queen",
-        "source": "Mumbai",
-        "destination": "Kolkata",
-        "seats": {
-            "SL": {
-                "available": 150,
-                "Rate": 520
-            },
-            "3A": {
-                "available": 30,
-                "Rate": 1300
-            },
-            "1A": {
-                "available": 8,
-                "Rate": 2600
-            }
-        }
-    },
-    {
-        "trainId": "12544",
-        "name": "Gitanjali Express",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 220,
-                "Rate": 480
-            },
-            "3A": {
-                "available": 45,
-                "Rate": 1550
-            },
-            "1A": {
-                "available": 12,
-                "Rate": 2750
-            }
-        }
-    },
-    {
-        "trainId": "12014",
-        "name": "Shatabdi Special",
-        "source": "Mumbai",
-        "destination": "Kolkata",
-        "seats": {
-            "SL": {
-                "available": 190,
-                "Rate": 590
-            },
-            "3A": {
-                "available": 25,
-                "Rate": 1400
-            },
-            "1A": {
-                "available": 10,
-                "Rate": 2900
-            }
-        }
-    },
-    {
-        "trainId": "12622",
-        "name": "Duronto Express",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 210,
-                "Rate": 520
-            },
-            "3A": {
-                "available": 50,
-                "Rate": 1700
-            },
-            "1A": {
-                "available": 7,
-                "Rate": 3000
-            }
-        }
-    },
-    {
-        "trainId": "12843",
-        "name": "Coromandel Express",
-        "source": "Mumbai",
-        "destination": "Kolkata",
-        "seats": {
-            "SL": {
-                "available": 170,
-                "Rate": 480
-            },
-            "3A": {
-                "available": 35,
-                "Rate": 1500
-            },
-            "1A": {
-                "available": 10,
-                "Rate": 2700
-            }
-        }
-    },
-    {
-        "trainId": "12731",
-        "name": "Vivek Express",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 200,
-                "Rate": 550
-            },
-            "3A": {
-                "available": 40,
-                "Rate": 1600
-            },
-            "1A": {
-                "available": 6,
-                "Rate": 2400
-            }
-        }
-    },
-    {
-        "trainId": "12956",
-        "name": "Jan Shatabdi",
-        "source": "Mumbai",
-        "destination": "Kolkata",
-        "seats": {
-            "SL": {
-                "available": 250,
-                "Rate": 600
-            },
-            "3A": {
-                "available": 20,
-                "Rate": 1800
-            },
-            "1A": {
-                "available": 5,
-                "Rate": 3200
-            }
-        }
-    },
-    {
-        "trainId": "12532",
-        "name": "Rajdhani Express",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 300,
-                "Rate": 400
-            },
-            "3A": {
-                "available": 50,
-                "Rate": 1700
-            },
-            "1A": {
-                "available": 15,
-                "Rate": 3100
-            }
-        }
-    },
-    {
-        "trainId": "12112",
-        "name": "Mumbai Express",
-        "source": "Mumbai",
-        "destination": "Kolkata",
-        "seats": {
-            "SL": {
-                "available": 210,
-                "Rate": 500
-            },
-            "3A": {
-                "available": 30,
-                "Rate": 1500
-            },
-            "1A": {
-                "available": 12,
-                "Rate": 2800
-            }
-        }
-    },
-    {
-        "trainId": "12617",
-        "name": "Double Decker",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 270,
-                "Rate": 450
-            },
-            "3A": {
-                "available": 60,
-                "Rate": 1400
-            },
-            "1A": {
-                "available": 10,
-                "Rate": 2500
-            }
-        }
-    },
-    {
-        "trainId": "12009",
-        "name": "Panchavati Express",
-        "source": "Mumbai",
-        "destination": "Kolkata",
-        "seats": {
-            "SL": {
-                "available": 180,
-                "Rate": 560
-            },
-            "3A": {
-                "available": 20,
-                "Rate": 1600
-            },
-            "1A": {
-                "available": 8,
-                "Rate": 2900
-            }
-        }
-    },
-    {
-        "trainId": "12864",
-        "name": "Kolkata Duronto",
-        "source": "Kolkata",
-        "destination": "Mumbai",
-        "seats": {
-            "SL": {
-                "available": 250,
-                "Rate": 470
-            },
-            "3A": {
-                "available": 40,
-                "Rate": 1500
-            },
-            "1A": {
-                "available": 10,
-                "Rate": 2700
-            }
-        }
+  {
+    "trainId": "12201",
+    "name": "Kolkata-Mumbai Express",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 200,
+        "Rate": 500
+      },
+      "3A": {
+        "available": 50,
+        "Rate": 1500
+      },
+      "1A": {
+        "available": 10,
+        "Rate": 2500
+      }
     }
+  },
+  {
+    "trainId": "12315",
+    "name": "Mumbai Superfast",
+    "source": "Mumbai",
+    "destination": "Kolkata",
+    "seats": {
+      "SL": {
+        "available": 180,
+        "Rate": 550
+      },
+      "3A": {
+        "available": 40,
+        "Rate": 1400
+      },
+      "1A": {
+        "available": 15,
+        "Rate": 2300
+      }
+    }
+  },
+  {
+    "trainId": "12432",
+    "name": "Howrah Mail",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 300,
+        "Rate": 450
+      },
+      "3A": {
+        "available": 60,
+        "Rate": 1200
+      },
+      "1A": {
+        "available": 5,
+        "Rate": 2800
+      }
+    }
+  },
+  {
+    "trainId": "12110",
+    "name": "Deccan Queen",
+    "source": "Mumbai",
+    "destination": "Kolkata",
+    "seats": {
+      "SL": {
+        "available": 150,
+        "Rate": 520
+      },
+      "3A": {
+        "available": 30,
+        "Rate": 1300
+      },
+      "1A": {
+        "available": 8,
+        "Rate": 2600
+      }
+    }
+  },
+  {
+    "trainId": "12544",
+    "name": "Gitanjali Express",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 220,
+        "Rate": 480
+      },
+      "3A": {
+        "available": 45,
+        "Rate": 1550
+      },
+      "1A": {
+        "available": 12,
+        "Rate": 2750
+      }
+    }
+  },
+  {
+    "trainId": "12014",
+    "name": "Shatabdi Special",
+    "source": "Mumbai",
+    "destination": "Kolkata",
+    "seats": {
+      "SL": {
+        "available": 190,
+        "Rate": 590
+      },
+      "3A": {
+        "available": 25,
+        "Rate": 1400
+      },
+      "1A": {
+        "available": 10,
+        "Rate": 2900
+      }
+    }
+  },
+  {
+    "trainId": "12622",
+    "name": "Duronto Express",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 210,
+        "Rate": 520
+      },
+      "3A": {
+        "available": 50,
+        "Rate": 1700
+      },
+      "1A": {
+        "available": 7,
+        "Rate": 3000
+      }
+    }
+  },
+  {
+    "trainId": "12843",
+    "name": "Coromandel Express",
+    "source": "Mumbai",
+    "destination": "Kolkata",
+    "seats": {
+      "SL": {
+        "available": 170,
+        "Rate": 480
+      },
+      "3A": {
+        "available": 35,
+        "Rate": 1500
+      },
+      "1A": {
+        "available": 10,
+        "Rate": 2700
+      }
+    }
+  },
+  {
+    "trainId": "12731",
+    "name": "Vivek Express",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 200,
+        "Rate": 550
+      },
+      "3A": {
+        "available": 40,
+        "Rate": 1600
+      },
+      "1A": {
+        "available": 6,
+        "Rate": 2400
+      }
+    }
+  },
+  {
+    "trainId": "12956",
+    "name": "Jan Shatabdi",
+    "source": "Mumbai",
+    "destination": "Kolkata",
+    "seats": {
+      "SL": {
+        "available": 250,
+        "Rate": 600
+      },
+      "3A": {
+        "available": 20,
+        "Rate": 1800
+      },
+      "1A": {
+        "available": 5,
+        "Rate": 3200
+      }
+    }
+  },
+  {
+    "trainId": "12532",
+    "name": "Rajdhani Express",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 300,
+        "Rate": 400
+      },
+      "3A": {
+        "available": 50,
+        "Rate": 1700
+      },
+      "1A": {
+        "available": 15,
+        "Rate": 3100
+      }
+    }
+  },
+  {
+    "trainId": "12112",
+    "name": "Mumbai Express",
+    "source": "Mumbai",
+    "destination": "Kolkata",
+    "seats": {
+      "SL": {
+        "available": 210,
+        "Rate": 500
+      },
+      "3A": {
+        "available": 30,
+        "Rate": 1500
+      },
+      "1A": {
+        "available": 12,
+        "Rate": 2800
+      }
+    }
+  },
+  {
+    "trainId": "12617",
+    "name": "Double Decker",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 270,
+        "Rate": 450
+      },
+      "3A": {
+        "available": 60,
+        "Rate": 1400
+      },
+      "1A": {
+        "available": 10,
+        "Rate": 2500
+      }
+    }
+  },
+  {
+    "trainId": "12009",
+    "name": "Panchavati Express",
+    "source": "Mumbai",
+    "destination": "Kolkata",
+    "seats": {
+      "SL": {
+        "available": 180,
+        "Rate": 560
+      },
+      "3A": {
+        "available": 20,
+        "Rate": 1600
+      },
+      "1A": {
+        "available": 8,
+        "Rate": 2900
+      }
+    }
+  },
+  {
+    "trainId": "12864",
+    "name": "Kolkata Duronto",
+    "source": "Kolkata",
+    "destination": "Mumbai",
+    "seats": {
+      "SL": {
+        "available": 0,
+        "Rate": 470
+      },
+      "3A": {
+        "available": 40,
+        "Rate": 1500
+      },
+      "1A": {
+        "available": 10,
+        "Rate": 2700
+      }
+    }
+  }
 ]

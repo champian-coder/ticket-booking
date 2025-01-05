@@ -1,34 +1,46 @@
 import { Train } from '../models/Train';
-import * as fs from 'fs';
-import * as path from 'path';
+import { FileUtil } from "../utils/AppUtil";
+import * as path from "path";
 
 export class TrainService {
   private trains: Train[];
-
+  public filePath = path.resolve(__dirname, '../data/trains.json');
   constructor() {
     this.trains = this.loadTrains();
   }
 
   private loadTrains(): Train[] {
-    const filePath = path.resolve(__dirname, '../data/trains.json');
-    const data = fs.readFileSync(filePath, 'utf-8');
-    return JSON.parse(data) as Train[];
+    
+    const data = FileUtil.readFile(this.filePath);
+    //console.log(data);
+    return data as Train[];
   }
 
   getTrainsBetweenStations(start: string, end: string): Train[] {
     return this.trains.filter(train => train.source === start && train.destination === end);
   }
 
-  updateSeatAvailability(trainno: string, seatType: "SL" | "3A" | "2A" | "1A", newAvailability: number): string {
+  updateSeatAvailability(trainno: string, seatType: "SL" | "3A" | "2A" | "1A", booked: number): string {
     const train = this.trains.find(t => t.trainId === trainno);
     if (!train) {
       return "Train not found";
     }
     if (train.seats[seatType]) {
-      train.seats[seatType].available = newAvailability;
-      return `Seat availability for ${seatType} updated to ${newAvailability}`;
+      train.seats[seatType].available = train.seats[seatType].available-booked;
+      this.saveTrainData();
     }
+    
     return "Seat type not available for this train";
+  }
+
+  private saveTrainData(): void {
+    // Ensure that the trains array is correctly formatted and not empty
+    if (this.trains && this.trains.length > 0) {
+      console.log("this is working:",this.trains.length)
+      FileUtil.writeFile(this.filePath, JSON.stringify(this.trains, null, 2));
+    } else {
+      console.error("No train data to write to the file.");
+    }
   }
 
   getTrainByTrainno(trainno: string): Train | undefined {

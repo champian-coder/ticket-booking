@@ -1,4 +1,4 @@
-import * as fs from "fs";
+import { FileUtil } from "../utils/AppUtil";
 import * as path from "path";
 import * as dotenv from 'dotenv';
 dotenv.config();
@@ -9,9 +9,7 @@ export class BookingService {
     saveTicket(ticket: object): void {
         let tickets = [];
         try {
-            if (fs.existsSync(ticketsFile)) {
-                tickets = JSON.parse(fs.readFileSync(ticketsFile, "utf8"));
-            }
+            tickets = FileUtil.readFile(ticketsFile);
         } catch (error) {
             console.error("Failed to read tickets file:", error);
         }
@@ -19,7 +17,7 @@ export class BookingService {
         tickets.push(ticket);
 
         try {
-            fs.writeFileSync(ticketsFile, JSON.stringify(tickets, null, 4));
+            FileUtil.writeFile(ticketsFile, JSON.stringify(tickets, null, 4));
         } catch (error) {
             console.error("Failed to save ticket:", error);
         }
@@ -51,10 +49,8 @@ export class BookingService {
     // Function to fetch booking history for a specific user
     getBookingHistory(userId: string): any[] {
         try {
-            if (fs.existsSync(ticketsFile)) {
-                const tickets = JSON.parse(fs.readFileSync(ticketsFile, "utf8"));
-                return tickets.filter((ticket: any) => ticket.userId === userId);
-            }
+            const tickets = FileUtil.readFile(ticketsFile);
+            return tickets.filter((ticket: any) => ticket.userId === userId);
         } catch (error) {
             console.error("Failed to fetch booking history:", error);
         }
@@ -64,33 +60,20 @@ export class BookingService {
     // Function to cancel a ticket by PNR
     cancelTicket(pnr: string): boolean {
         try {
-            if (fs.existsSync(ticketsFile)) {
-                let tickets = JSON.parse(fs.readFileSync(ticketsFile, "utf8"));
+                let tickets =FileUtil.readFile(ticketsFile,);
                 const ticketIndex = tickets.findIndex((ticket: any) => ticket.pnr === pnr);
     
                 if (ticketIndex !== -1) {
                     const ticket = tickets[ticketIndex];
-                    // Update seat availability before changing the ticket status
-                    // const trainSeats = ticket.train.seats;
-                    // const seatType = ticket.travelClass as keyof typeof trainSeats;
-                    // const selectedSeat = trainSeats[seatType];
-    
-                    // if (selectedSeat) {
-                    //     selectedSeat.available += ticket.passengers.length;
-                    //     console.log(`Seats for class ${ticket.travelClass} restored.`);
-                    // }
-    
-                    // Change the ticket status to 'Cancelled'
                     ticket.status = "Cancelled";
     
                     // Save the updated tickets back to the file
                     tickets[ticketIndex] = ticket;  // Update the ticket status in the array
-                    fs.writeFileSync(ticketsFile, JSON.stringify(tickets, null, 4));
+                    FileUtil.writeFile(ticketsFile, JSON.stringify(tickets, null, 4));
     
                     console.log("Ticket cancelled successfully.");
                     return true;
                 }
-            }
         } catch (error) {
             console.error("Error cancelling ticket:", error);
         }

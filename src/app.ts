@@ -4,7 +4,7 @@ import { TrainHandler } from "./handlers/TrainHandler";
 import { TrainService } from "./services/TrainService";
 import { BookingService } from "./services/BookingService";
 import { BookingHandler } from "./handlers/BookingHandler";
-
+import {getErrorMessage} from './utils/AppUtil';
 // Initialize the handlers and services
 const authHandler = new AuthHandler();
 const trainService = new TrainService();
@@ -119,13 +119,7 @@ function main(): void {
     }
 }
 
-// Helper function to safely extract error messages
-function getErrorMessage(error: unknown): string {
-    if (error instanceof Error) {
-        return error.message;
-    }
-    return String(error);
-}
+
 
 // Start the application
 try {

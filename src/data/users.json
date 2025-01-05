@@ -28,5 +28,11 @@
     "name": "rasmita",
     "email": "ramita",
     "password": "a"
+  },
+  {
+    "userId": "6",
+    "name": "sa",
+    "email": "b",
+    "password": "c"
   }
 ]

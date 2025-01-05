@@ -14,7 +14,8 @@ export class FileUtil {
 
     static writeFile(filePath: string, data: any): void {
         try {
-            fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+            // fs.writeFileSync(filePath, JSON.stringify(data, null, 2));
+            fs.writeFileSync(filePath, data);
         } catch (error) {
             console.error(`Error writing file to ${filePath}:`, error);
             throw error;
@@ -23,4 +24,13 @@ export class FileUtil {
 }
 export function printHeader() {
     console.log("Welcome to the Ticket Booking System");
+}
+
+
+// Helper function to safely extract error messages
+export function getErrorMessage(error: unknown): string {
+    if (error instanceof Error) {
+        return error.message;
+    }
+    return String(error);
 }

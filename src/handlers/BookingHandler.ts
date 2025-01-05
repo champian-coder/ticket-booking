@@ -33,37 +33,44 @@ export class BookingHandler {
         const travelClass = readlineSync.question(
             `Enter class (${validClasses.join(", ")}): `
         );
-
-        if (!validClasses.includes(travelClass as keyof typeof selectedTrain.seats)) {
+        const seatType: "SL" | "3A" | "2A" | "1A" = travelClass.toUpperCase() as "SL" | "3A" | "2A" | "1A";
+        if (!validClasses.includes(seatType as keyof typeof selectedTrain.seats)) {
             console.log("Invalid class.");
             return;
         }
 
-        const selectedSeat = selectedTrain.seats[travelClass as keyof typeof selectedTrain.seats];
+        const selectedSeat = selectedTrain.seats[seatType as keyof typeof selectedTrain.seats];
 
         if (!selectedSeat) {
-            console.log(`Seat type ${travelClass} is not available.`);
+            console.log(`Seat type ${seatType} is not available.`);
             return;
         }
 
         if (selectedSeat.available <= 0) {
-            console.log(`No seats available in ${travelClass}.`);
+            console.log(`No seats available in ${seatType}.`);
             return;
         }
 
-        console.log(`Selected class: ${travelClass}`);
+        console.log(`Selected class: ${seatType}`);
         console.log("Seat availability:", selectedSeat.available);
-
-        const passengers: Array<{ name: string; age: number }> = [];
+        console.log("Seat Price:", selectedSeat.Rate);
+        const passengers: Array<{ name: string; age: number; status: string }> = [];
         while (true) {
             const passengerName = readlineSync.question("Enter passenger name: ");
             const passengerAge = readlineSync.questionInt("Enter passenger age: ");
-            passengers.push({ name: passengerName, age: passengerAge });
-
+            let passengerStatus="CNF"
+            if(selectedSeat.available<=passengers.length){
+                passengerStatus="WL"+(selectedSeat.available-passengers.length+1);
+            }
+            passengers.push({ name: passengerName, age: passengerAge, status: passengerStatus});
+            
             const addMore = readlineSync.question("Add another passenger? (yes/no): ");
             if (addMore.toLowerCase() !== "yes") break;
         }
-
+        let ticketStatus="Confirmed";
+        if(selectedSeat.available>passengers.length){
+            ticketStatus="WaitListed";
+        }
         // Calculate total charge
         const totalCharge = this.bookingService.calculateTotalCharge(passengers, selectedSeat.Rate);
 
@@ -72,14 +79,15 @@ export class BookingHandler {
             userId: loggedInUser.userId,
             trainNumber: selectedTrain.trainId,
             trainName: selectedTrain.name,
-            travelClass,
+            travelClass:seatType,
             passengers,
+            NoofPassanger: passengers.length,
             totalCharge,
-            status: "Confirmed",
+            status: ticketStatus,
         };
-
+        //let seatType="SL";
         // Reduce seat availability
-        this.bookingService.reduceSeatAvailability(selectedSeat, passengers.length);
+        this.trainHandler.handleUpdateSeatAvailability(selectedTrain.trainId,seatType, passengers.length);
 
         // Save the ticket
         this.bookingService.saveTicket(ticket);

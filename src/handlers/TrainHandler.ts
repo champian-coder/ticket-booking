@@ -13,8 +13,8 @@ export class TrainHandler {
     console.log(trains);
   }
 
-  handleUpdateSeatAvailability(trainno: string, seatType: "SL" | "3A" | "2A" | "1A", newAvailability: number) {
-    console.log(this.trainService.updateSeatAvailability(trainno, seatType, newAvailability));
+  handleUpdateSeatAvailability(trainno: string, seatType: "SL" | "3A" | "2A" | "1A", booked: number) {
+    console.log(this.trainService.updateSeatAvailability(trainno, seatType, booked));
   }
 
   handleGetTrainByTrainno(trainno: string) {
